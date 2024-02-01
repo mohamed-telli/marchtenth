@@ -28,4 +28,3 @@ RUN npm run build
 EXPOSE 80
 
 CMD ["npm", "run", "start"]
->>>>>>> e6d4a0b17bd425f48768e8405684f38987d2c0f5
