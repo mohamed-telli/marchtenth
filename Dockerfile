@@ -1,24 +1,15 @@
-# Use an official Node.js runtime as a parent image
-FROM node:16-alpine
+# Use the official Node.js 18 image as the base image
+FROM node:18-alpine
 
-WORKDIR .
+# Set the working directory in the container
+WORKDIR /react-docker-example/
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY public/ /react-docker-example/public
 
+COPY src/ /react-docker-example/src
 
+COPY package.json /react-docker-example/
 
-# Copy the application files to the working directory
-COPY . .
-
-# Install app dependencies
 RUN npm install
 
-
-RUN npm run build
-
-# Expose port 80
-EXPOSE 80
-
-# Command to run the application
-CMD npm run start
+CMD ["npm", "start"]

@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      Mein name ist Rafik
+      Mein name ist Rafiko
     </div>
   );
 }
