@@ -1,24 +1,13 @@
-# Use an official Node.js runtime as a parent image
 FROM node:16-alpine
 
-WORKDIR .
+WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY . /app
 
-
-
-# Copy the application files to the working directory
-COPY . .
-
-# Install app dependencies
 RUN npm install
-
 
 RUN npm run build
 
-# Expose port 80
 EXPOSE 80
 
-# Command to run the application
-CMD npm run start
+CMD ["npm", "run", "start"]
