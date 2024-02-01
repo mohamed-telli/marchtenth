@@ -14,6 +14,9 @@ COPY . .
 # Install app dependencies
 RUN npm install
 
+
+RUN npm run build
+
 # Expose port 80
 EXPOSE 80
 
